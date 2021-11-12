@@ -1,46 +1,48 @@
-# Getting Started with Create React App
+# TEST_BUILDERS-LOCALIZATION-APP 🚀
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Desenvolva um aplicativo que consuma a localização atual do usuário e exiba na interface o endereço atual os dados climáticos da região e um botão para atualizar os dados.
 
-## Available Scripts
+## Critérios de avaliação
 
-In the project directory, you can run:
+[x] Consumir localização atual do usuário;
+[x] Exibir localização atual do usuário;
+[x] Exibir localização atual do usuário;
+[x] Exibir os dados climáticos da localização do usuário.
 
-### `yarn start`
+## Implementação
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+O app foi criado utilizando create-react-app com template typescript.
+```
+npx create-react-app --template=typescript
+````
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Frameworks utilizados
+    
+    "@babel/preset-typescript": "^7.16.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/styled-components": "^5.1.15",
+    "axios": "^0.24.0",
+    "jest": "26.6.0",
+    "moment": "^2.29.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-loader-spinner": "^4.0.0",
+    "react-scripts": "4.0.3",
+    "regenerator-runtime": "^0.13.9",
+    "styled-components": "^5.3.3",
+    "typescript": "^4.1.2",
+    "web-vitals": "^1.0.1",
+    "@types/react-test-renderer": "^17.0.1",
+    "polished": "^4.1.3",
+    "react-test-renderer": "^17.0.2"
+    
+## Funcionalidade
 
-### `yarn test`
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/62850277/141405576-762705ec-8887-469a-aa7a-9d1f2f50892b.gif)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
