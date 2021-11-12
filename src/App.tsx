@@ -1,26 +1,75 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react'
+import { getWeatherWithLatitudeAndLongitude } from './api/weatherApi/endpoints'
+import { MainPage } from './pages/MainPage'
+import GlobalStyle from './style/index'
 
 function App() {
+  const [weather, setWeather] = useState<string[] | null>([])
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    handleGetLocationPermissions()
+  }, [])
+
+  function handleGetLocationPermissions() {
+    navigator.geolocation?.getCurrentPosition(
+      () => {
+        return
+      },
+      () => {
+        alert(
+          'Não foi possível obter sua localização, favor verificar permissões no navegador.',
+        )
+      },
+      { timeout: 5000 },
+    )
+  }
+
+  function handleGetUserLatitudeAndLongitude() {
+    if (navigator.geolocation) {
+      setLoading(true)
+      navigator.geolocation?.getCurrentPosition(
+        saveUserLocalization,
+        () => {
+          alert(
+            'Não foi possível obter sua localização, favor verificar permissões no navegador.',
+          )
+          setLoading(false)
+        },
+        { timeout: 5000 },
+      )
+    } else {
+      console.error('Geolocation is not supported by this browser.')
+      setLoading(false)
+    }
+  }
+
+  async function saveUserLocalization(position: GeolocationPosition) {
+    if (position) {
+      try {
+        const weatherResponse = await getWeatherWithLatitudeAndLongitude({
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude,
+        })
+        setWeather(weatherResponse)
+      } catch (error) {
+        console.error(error)
+      } finally {
+        setLoading(false)
+      }
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <MainPage
+        weather={weather}
+        handleGetUserLatitudeAndLongitude={handleGetUserLatitudeAndLongitude}
+        loading={loading}
+      />
+      <GlobalStyle />
+    </>
+  )
 }
 
-export default App;
+export default App

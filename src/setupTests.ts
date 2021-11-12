@@ -2,4 +2,18 @@
 // allows you to do things like:
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
-import '@testing-library/jest-dom';
+
+import '@testing-library/jest-dom'
+
+const mockGeolocation = {
+  getCurrentPosition: jest.fn().mockImplementationOnce((success) =>
+    success({
+      coords: {
+        latitude: -23.5581168,
+        longitude: -46.775484,
+      },
+    }),
+  ),
+}
+
+global.navigator.geolocation = mockGeolocation
