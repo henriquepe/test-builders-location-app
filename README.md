@@ -57,10 +57,13 @@ npx create-react-app --template=typescript
 ## Instalação e configuração
 
 1. Clonar repositório
+
 ![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/62850277/141406304-5363173a-d139-42b7-83c2-0fbdfb8fab2a.gif)
+
 ![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/62850277/141406443-a9e44d0a-c92d-48e7-8299-8ea78946d910.gif)
 
 2. Instalar as dependências do projeto
+
 ![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/62850277/141406661-9ea30b36-7876-43a8-b007-ad87df5a174d.gif)
 
 3. Inicializar servidor / rodar projeto
