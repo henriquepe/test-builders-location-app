@@ -4,10 +4,10 @@ Desenvolva um aplicativo que consuma a localização atual do usuário e exiba n
 
 ## Critérios de avaliação
 
-[x] Consumir localização atual do usuário;
-[x] Exibir localização atual do usuário;
-[x] Exibir localização atual do usuário;
-[x] Exibir os dados climáticos da localização do usuário.
+- [x] Consumir localização atual do usuário;
+- [x] Exibir localização atual do usuário;
+- [x] Exibir localização atual do usuário;
+- [x] Exibir os dados climáticos da localização do usuário.
 
 ## Implementação
 
@@ -15,6 +15,18 @@ O app foi criado utilizando create-react-app com template typescript.
 ```
 npx create-react-app --template=typescript
 ````
+
+## Testes
+
+```
+    ✓ should render the MainPage correctly (27 ms)
+    ✓ should initiate the button in the main page with "Consultar meu clima" text (6 ms)
+    ✓ should change the button text in the main page with "Realizar nova consulta" (4 ms)
+    ✓ should render the weather data (9 ms)
+```
+
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/62850277/141405915-cde6b5ba-cfc7-4c1a-a00b-a6cac28b8843.gif)
+
 
 ## Frameworks utilizados
     
